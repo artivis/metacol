@@ -17,4 +17,22 @@ F call_for_each(F f, Args&&... args)
 
 } /* namespace mco */
 
+/*
+
+Usage :
+
+#include "metacol/vs/call_for_each.h"
+#include <iostream> 
+
+int main()
+{
+  auto f = [](int i){ std::cout << ++i << " "; };
+  
+  mco::call_for_each(f, 1, 2, 3);
+
+  return 0;
+}
+
+*/
+
 #endif /* _METACOL_VS_CALL_FOR_EACH_H_ */
