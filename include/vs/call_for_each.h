@@ -2,10 +2,10 @@
 // "I wish I could use c++ 1x/y/z"
 // https://www.youtube.com/watch?v=gPj90zwLphw
 
-namespace mco {
-
 #ifndef _METACOL_VS_CALL_FOR_EACH_H_
 #define _METACOL_VS_CALL_FOR_EACH_H_
+
+namespace mco {
 
 #include <functional>
 
