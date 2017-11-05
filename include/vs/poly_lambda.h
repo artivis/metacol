@@ -1,3 +1,6 @@
+#ifndef _METACOL_VS_POLY_LAMBDA_H_
+#define _METACOL_VS_POLY_LAMBDA_H_
+
 // From Joel Falcou CppCon 2017 talk
 // "I wish I could use c++ 1x/y/z"
 // https://www.youtube.com/watch?v=gPj90zwLphw
@@ -28,6 +31,8 @@ poly_<T, decltype(poly(std::declval<Args>()...))>
 {
     return { std::forward<T>(t), poly(std::forward<Args>(args)...) };
 }
+
+#endif /* _METACOL_VS_POLY_LAMBDA_H_ */
 
 /*
 
