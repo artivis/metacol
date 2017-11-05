@@ -8,7 +8,7 @@
 #include <utility>
 
 template <typename T1, typename T2>
-struct poly_ : T1, T2
+struct poly_lambda_ : T1, T2
 {
     poly_(T1&& t1, T2&& t2) :
     T1(std::forward<T1>(t1)),
@@ -19,15 +19,15 @@ struct poly_ : T1, T2
 };
 
 template <typename T1, typename T2>
-poly_<T1, T2> poly(T1&& t1, T2&& t2)
+poly_lamda_<T1, T2> poly_lamda(T1&& t1, T2&& t2)
 {
     return { std::forward<T1>(t1), std::forward<T2>(t2) };
 }
 
 template <typename T, typename... Args>
 auto
-poly(T&& t, Args&&... args) ->
-poly_<T, decltype(poly(std::declval<Args>()...))>
+poly_lambda(T&& t, Args&&... args) ->
+poly_lambda_<T, decltype(poly_lambda(std::declval<Args>()...))>
 {
     return { std::forward<T>(t), poly(std::forward<Args>(args)...) };
 }
