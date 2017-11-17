@@ -16,18 +16,22 @@ using append_t = typename append<C,T...>::type;
 
 } /* namespace mco */
 
+/*
+
+Usage :
+
 #include <tuple>
 
 int main()
 {
   using t_t = std::tuple<int>;
 
-  static_assert(std::is_same<std::tuple<int,float>, append_t<t_t, float>>::value, "");
-  static_assert(std::is_same<std::tuple<int,float,double>, append_t<t_t, float, double>>::value, "");
+  static_assert(std::is_same<std::tuple<int,float>, mco::append_t<t_t, float>>::value, "");
+  static_assert(std::is_same<std::tuple<int,float,double>, mco::append_t<t_t, float, double>>::value, "");
 
   return 0;
 }
 
-} /* namespace mco */
+*/
 
 #endif /* _METACOL_TS_APPEND_H_ */
