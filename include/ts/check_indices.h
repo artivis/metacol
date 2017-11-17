@@ -1,7 +1,6 @@
 #ifndef _METACOL_TS_CHECK_INDICES_H_
 #define _METACOL_TS_CHECK_INDICES_H_
 
-#include "range.h"
 #include "conjunction.h"
 
 namespace mco {
@@ -17,10 +16,11 @@ struct check_indices<C<Indices...>, I>  : conjunction<std::integral_constant<boo
 /*
 Usage :
 #include "range.h"
+#include "check_indices.h"
 
 int main()
 {
-  static_assert( check_indices<make_int_sequence<2>, 3>::value, "All indices are less than 3.");
+  static_assert( mco::check_indices<mco::make_int_sequence<2>, 3>::value, "All indices are less than 3.");
   return 0;
 }
 */
