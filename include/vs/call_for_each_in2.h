@@ -8,8 +8,7 @@ namespace mco {
 template<typename T, typename F, template <class...I> class S, int... I>
 void call_for_each(F f, T&& t, S<I...>)
 {
-  using Arg = decltype( std::get<I>(std::forward<T>(t)) );
-  auto l = { (f(std::forward<Arg>(std::get<I>(std::forward<T>(t)))), 0)... };
+  auto l = { (f(std::get<I>(std::forward<T>(t))), 0)... };
 }
 
 template<typename F, template <class...Ts> class C, typename... Ts>
