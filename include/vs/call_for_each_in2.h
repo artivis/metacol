@@ -5,7 +5,7 @@
 
 namespace mco {
 
-template<typename T, typename F, template <class...I> class S, int... I>
+template<typename T, typename F, template <int... I> class S, int... I>
 void call_for_each(F f, T&& t, S<I...>)
 {
   auto l = { (f(std::get<I>(std::forward<T>(t))), 0)... };
@@ -14,7 +14,7 @@ void call_for_each(F f, T&& t, S<I...>)
 template<typename F, template <class...Ts> class C, typename... Ts>
 void call_for_each(F f, C<Ts...>&& t)
 {
-  for_each(std::forward<F>(f), std::forward<C<Ts...>>(t), make_int_sequence<sizeof...(Ts)>());
+  call_for_each(std::forward<F>(f), std::forward<C<Ts...>>(t), make_int_sequence<sizeof...(Ts)>());
 }
 
 } /* namespace mco */ 
