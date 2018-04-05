@@ -30,8 +30,8 @@ struct sub_pack < C<Args...>, S<Indices...> >
                          std::get<Indices>( std::declval<C<Args...>>() )... ) );
 };
 
-template <typename T, int I>
-using make_sub_pack = typename sub_pack<T, make_int_sequence<I-1>>::type;
+template <typename... Ts>
+using sub_pack_t = typename sub_pack<Ts...>::type;
 
 } /* namespace mco */
 
@@ -43,9 +43,17 @@ Usage :
 
 int main()
 {
-  using t_t = std::tuple<int,float,double>;
-
-  static_assert(std::is_same<std::tuple<int,float>, make_sub_pack<t_t, 2>>::value, "");
+  using Tuple = std::tuple<int,float,double>;
+  
+  // First 2 types
+  using SubTuple0 = sub_pack_t<Tuple, make_int_sequence<1>>;
+  
+  static_assert(std::is_same<std::tuple<int,float>, SubTuple0>::value, "");
+  
+  // Types 1-2
+  using SubTuple1 = sub_pack_t<Tuple, range<1,2> >;
+  
+  static_assert(std::is_same<std::tuple<float,double>, SubTuple1>::value, "");
 
   return 0;
 }
