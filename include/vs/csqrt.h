@@ -1,5 +1,5 @@
-#ifndef _METACOL_VS_CALL_FOR_EACH_H_
-#define _METACOL_VS_CALL_FOR_EACH_H_
+#ifndef _METACOL_VS_CSQRT_H_
+#define _METACOL_VS_CSQRT_H_
 
 // credits : https://stackoverflow.com/a/34134071/9709397
 
@@ -28,3 +28,5 @@ double constexpr csqrt(T x)
 }
 
 } /* namespace mco */
+
+#endif /* _METACOL_VS_CSQRT_H_ */
