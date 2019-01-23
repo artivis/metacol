@@ -1,7 +1,7 @@
 #ifndef _METACOL_TS_NEGATION_H_
 #define _METACOL_TS_NEGATION_H_
 
-#include "bool_constant.h"
+#include "metacol/bool_constant.h"
 
 namespace mco {
 

@@ -1,7 +1,7 @@
 #ifndef _METACOL_MS_ENABLE_IF_H_
 #define _METACOL_MS_ENABLE_IF_H_
 
-#include "../ts/disjunction.h"
+#include "metacol/disjunction.h"
 
 namespace mco {
 

@@ -1,7 +1,7 @@
 #ifndef _METACOL_VS_CALL_FOR_EACH_IN_H_
 #define _METACOL_VS_CALL_FOR_EACH_IN_H_
 
-#include <metacol/ts/range.h>
+#include "metacol/range.h"
 
 namespace mco {
 
@@ -17,13 +17,13 @@ void call_for_each(F f, C<Ts...>&& t)
   call_for_each(std::forward<F>(f), std::forward<C<Ts...>>(t), make_int_sequence<sizeof...(Ts)>());
 }
 
-} /* namespace mco */ 
+} /* namespace mco */
 
 #endif /* _METACOL_VS_CALL_FOR_EACH_IN_H_ */
 
 /*
 // Usage :
-#include <iostream> 
+#include <iostream>
 int main()
 {
   auto f = [](const int& i){ std::cout << i << " "; };

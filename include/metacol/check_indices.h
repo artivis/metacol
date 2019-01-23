@@ -1,7 +1,7 @@
 #ifndef _METACOL_TS_CHECK_INDICES_H_
 #define _METACOL_TS_CHECK_INDICES_H_
 
-#include "conjunction.h"
+#include "metacol/conjunction.h"
 
 namespace mco {
 
@@ -12,6 +12,8 @@ template <template <int...> class C, int I, int... Indices>
 struct check_indices<C<Indices...>, I>  : conjunction<std::integral_constant<bool, Indices < I>...> {};
 
 } /* namespace mco */
+
+#endif /* _METACOL_TS_CHECK_INDICES_H_ */
 
 /*
 Usage :
@@ -24,5 +26,3 @@ int main()
   return 0;
 }
 */
-
-#endif /* _METACOL_TS_CHECK_INDICES_H_ */

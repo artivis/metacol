@@ -1,7 +1,7 @@
 #ifndef _METACOL_TS_REP_TUP_H_
 #define _METACOL_TS_REP_TUP_H_
 
-#include "container_cat.h"
+#include "metacol/container_cat.h"
 
 namespace mco {
 namespace detail {
