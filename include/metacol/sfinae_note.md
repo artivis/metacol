@@ -31,3 +31,15 @@ static_assert(! has_header<B>::value, "yes does not have header");
 static_assert(! has_header<C>::value, "yes does not have header");
 static_assert(  has_header<D>::value, "yes has header");
 ```
+
+Some neat SFINAE
+```
+template< typename T >
+using if_is_signed = typename std::enable_if< std::is_signed< T >::value, bool >::type;
+
+template< typename T, if_is_signed< T > = true >
+T foo( T val );
+
+template< typename T, if_is_signed< T >... >
+T bar( T val );
+```
