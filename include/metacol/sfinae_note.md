@@ -33,7 +33,7 @@ static_assert(  has_header<D>::value, "yes has header");
 ```
 
 Some neat SFINAE
-```
+```cpp
 template< typename T >
 using if_is_signed = typename std::enable_if< std::is_signed< T >::value, bool >::type;
 
