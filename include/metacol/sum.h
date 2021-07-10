@@ -20,6 +20,16 @@ struct sum<>
 template <int... Args>
 constexpr int sum_v = sum<Args...>::value;
 
+template <typename T>
+constexpr T accumulate(T t) {
+  return t;
+}
+
+template <typename T, typename... Rest>
+constexpr auto accumulate(T t, Rest... rest) -> decltype(t + accumulate(rest...)) {
+  return t + accumulate(rest...);
+}
+  
 } /* namespace mco */
 
 #endif /* _METACOL_VS_SUM_H_ */
